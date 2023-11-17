@@ -14,6 +14,7 @@ io.on('connection',(socket)=>{
     
     socket.on('disconnect',(reason)=>{
         console.log('client disconnected: ', socket.id);
+        socket.broadcast.emit('userLeft', socket.id)
     })
 })
 
